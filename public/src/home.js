@@ -1,3 +1,8 @@
+function sort(array){
+  return array.sort((one, two) => one.count < two.count ? 1 : -1).splice(0, 5);
+}
+//===== helper function above =======
+
 function getTotalBooksCount(books) {
   let total = books.length
   return total;
@@ -27,7 +32,7 @@ for(gen in accList) {
   result.push(common);
   
 };
-return result.sort((a, b) => a.count < b.count ? 1 : -1).splice(0, 5);
+return sort(result);
 }
 
 function getMostPopularBooks(books) {
@@ -39,7 +44,7 @@ function getMostPopularBooks(books) {
     const popular = {"name": title, "count": theNumber};
     result.push(popular);
    });
-return result.sort((a, b) => a.count < b.count ? 1 : -1).splice(0, 5);
+return sort(result);
 }
 
 
@@ -59,7 +64,7 @@ function getMostPopularAuthors(books, authors) {
         }
       });
   });
-  return result.sort((a, b) => a.count < b.count ? 1 : -1).splice(0, 5);
+  return sort(result);
 }
 
 
