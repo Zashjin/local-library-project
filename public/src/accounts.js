@@ -26,7 +26,7 @@ function getBooksPossessedByAccount(account, books, authors) {
   const bookOne = books.filter((book) => {
   const borrow = book.borrows[0];
   return !borrow.returned && borrow.id === account.id;
-  })
+  });
 
   const allCurrentBorrows = bookOne.map((book) => {
   const auth = authors.find((author) => author.id === book.authorId)
